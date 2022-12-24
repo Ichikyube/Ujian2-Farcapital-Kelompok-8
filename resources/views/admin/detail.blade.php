@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 @extends('dashboard');
 
 
@@ -12,9 +11,9 @@
             </a>
             <div class="bg-white flex flex-col justify-start p-6">
                 <div class="flex justify-between">
-                    <a href="#" class="text-yellow-600 text-sm font-bold uppercase pb-4">{{ $aspirasi['topik'] }}</a>
+                    <a href="#" class="text-3xl font-bold hover:text-gray-700 pb-4">{{ $aspirasi['topik'] }}</a>
                 </div>
-                <a href="#" class="text-3xl font-bold hover:text-gray-700 pb-4">Jenis Laporan : 
+                <a href="#" class="text-yellow-600 text-sm font-bold uppercase pb-4">Jenis Laporan : 
                     @if ($aspirasi['jenis_laporan'] == 1)
                         Aspirasi
                     @else
@@ -39,19 +38,3 @@
         </article>
     </section>
 @endsection
-=======
-<x-app-layout>
-    @csrf
-    <div class="w-[1250px] mx-auto shadow-lg mt-10 p-6">
-        <div class="mx-auto">
-            <h1 class="text-[70px] font-bold text-center">{{ $aspirasi['topik'] }}</h1>
-            <div class="flex justify-center">
-                <img src="http://localhost:9000/{{ $aspirasi['foto'] }}" class="w-[600px]">
-            </div>
-            <div class="mt-4">
-                <p class="text-[18px] text-slate-900">{{ $aspirasi['cerita'] }}</p>
-            </div>
-        </div>
-    </div>
-</x-app-layout>
->>>>>>> 605cc38f660f711e27e3d4e4c54293b379d8062d
