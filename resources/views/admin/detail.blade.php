@@ -25,7 +25,7 @@
                     Laporan dari : <a class="font-semibold hover:text-gray-800">{{ $aspirasi['alamat'] }}</a>
                 </p>
                 <p href="" class="text-sm pb-8">
-                    Kecamatan : <a class="font-semibold hover:text-gray-800">{{ $aspirasi['kecamatan'] }}</a>
+                    Kecamatan : <a class="font-semibold hover:text-gray-800 ">{{ $aspirasi['kecamatan'] }}</a>
                 </p>
                 <p href="" class="text-sm pb-8">
                     Kabupaten : <a class="font-semibold hover:text-gray-800">{{ $aspirasi['kabupaten'] }}</a>
