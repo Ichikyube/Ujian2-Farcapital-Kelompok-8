@@ -29,7 +29,7 @@ class LandingController extends Controller
             $foto
         );
         if($responseBook['status'] == false){
-            return back()->withErrors($responseBook['message']);
+            return back()->withErrors($responseBook['message'])->withInput($payload);
         }
 
         $book = $responseBook['data'];
