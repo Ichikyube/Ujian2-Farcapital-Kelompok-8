@@ -13,14 +13,18 @@ class AspirasiController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
+    public function aspirasi()
     {
+<<<<<<< HEAD
         $aspirasi =  Aspirasi::latest()->get();
         return response()->json([
             'status' => true,
             'message' => "Data semua aspirasi didapatkan",
             'data' => $aspirasi
         ]);
+=======
+        return view("forms.aspirasi");
+>>>>>>> d3a58fc8834660a09262dfa2b088112a07670fff
     }
 
 
@@ -45,7 +49,7 @@ class AspirasiController extends Controller
             ], 403);
         }
 
-        
+
         $payload = $request->all();
 
         if($request->file('foto')){
@@ -61,7 +65,7 @@ class AspirasiController extends Controller
         }
 
         $payload['status'] = false;
-        
+
         $aspirasi = Aspirasi::create($payload);
 
         return response()->json([
@@ -70,7 +74,7 @@ class AspirasiController extends Controller
             'data' => $aspirasi
         ], 201);
     }
-    
+
     /**
      * Display the specified resource.
      *
@@ -80,7 +84,7 @@ class AspirasiController extends Controller
     public function show($id)
     {
         $aspirasi = Aspirasi::find($id);
-        
+
         if(!$aspirasi){
             return response()->json([
                 'status' => true,
@@ -105,6 +109,23 @@ class AspirasiController extends Controller
      */
     public function update(Request $request, Aspirasi $aspirasi)
     {
+<<<<<<< HEAD
+=======
+        try {
+            $request->validate([
+                'cerita' => ['required', 'min:20']
+            ]);
+
+
+        } catch (\Illuminate\Validation\ValidationException $th) {
+            return response()->json([
+                'status' => false,
+                'message' => $th->validator->errors()
+            ], 403);
+        }
+
+
+>>>>>>> d3a58fc8834660a09262dfa2b088112a07670fff
         $payload = $request->all();
 
         $aspirasi = $aspirasi->update($payload);
