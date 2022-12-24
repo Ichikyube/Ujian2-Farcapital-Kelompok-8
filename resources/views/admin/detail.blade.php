@@ -8,9 +8,9 @@
             </a>
             <div class="bg-white flex flex-col justify-start p-6">
                 <div class="flex justify-between">
-                    <a href="#" class="text-yellow-600 text-sm font-bold uppercase pb-4">{{ $aspirasi['topik'] }}</a>
+                    <a href="#" class="text-3xl font-bold hover:text-gray-700 pb-4">{{ $aspirasi['topik'] }}</a>
                 </div>
-                <a href="#" class="text-3xl font-bold hover:text-gray-700 pb-4">Jenis Laporan :
+                <a href="#" class="text-yellow-600 text-sm font-bold uppercase pb-4">Jenis Laporan : 
                     @if ($aspirasi['jenis_laporan'] == 1)
                         Aspirasi
                     @else
