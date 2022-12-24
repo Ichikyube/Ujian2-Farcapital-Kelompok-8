@@ -1,17 +1,4 @@
-@extends('dashboard');
-
-
-@section('content')
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <script src="https://cdn.tailwindcss.com"></script>
-    <title>Document</title>
-</head>
-<body>
+<x-app-layout>
     <div class="w-[1250px] mx-auto shadow-xl mt-12 p-4">
         <div class="flex justify-between items-center mb-10">
             <h1 class="text-gray-800 font-bold text-[50px]">List aspirasi masyarakat<span class="text-[60px] text-yellow-500 font-bold">Q</span></h1>
@@ -45,6 +32,4 @@
             </tbody>
         </table>
     </div>
-</body>
-</html>
-@endsection
+</x-app-layout>

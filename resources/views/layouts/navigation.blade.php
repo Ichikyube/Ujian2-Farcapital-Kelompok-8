@@ -12,14 +12,16 @@
     </div>
     <div class="hidden absolute top-1/2 left-1/2 transform -translate-y-1/2 -translate-x-1/2 lg:flex lg:mx-auto lg:items-center lg:w-auto lg:space-x-6" id="nav-content">
         <div class="flex gap-14">
-            @if(Route::is('welcome'))
-            <x-nav-link :href="route('form.aspirasi')">
-                {{ __('Suara Anda') }}
-            </x-nav-link>
-            @else
-            <x-nav-link :href="route('welcome')" :active="request()->routeIs('welcome')">
-                {{ __('Beranda') }}
-            </x-nav-link>
+            @if(!session()->has('logged'))
+                @if(Route::is('welcome') )
+                <x-nav-link :href="route('form.aspirasi')">
+                    {{ __('Suara Anda') }}
+                </x-nav-link>
+                @else
+                <x-nav-link :href="route('welcome')" :active="request()->routeIs('welcome')">
+                    {{ __('Beranda') }}
+                </x-nav-link>
+                @endif
             @endif
             @if(session()->has('logged'))
             <x-nav-link :href="route('admin.list')" :active="request()->routeIs('admin.list')">
@@ -65,10 +67,11 @@
         </div>
         <div>
             <div class="hidden space-x-8 sm:-my-px sm:ml-10 sm:flex flex-grow lg:flex lg:items-center lg:w-auto mt-2 lg:mt-0 bg-gray-100 md:bg-transparent z-20" id="nav-content">
+                @if(!Route::is('welcome') )
                 <x-nav-link :href="route('welcome')" :active="request()->routeIs('welcome')">
                     {{ __('Beranda') }}
                 </x-nav-link>
-
+                @endif
                 @if (session()->has('logged'))
                 <x-nav-link :href="route('admin.logout')" :active="request()->routeIs('admin.logout')">
                     {{ __('Logout') }}
