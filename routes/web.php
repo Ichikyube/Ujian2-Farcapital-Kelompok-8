@@ -1,7 +1,6 @@
 <?php
 
-use App\Http\Controllers\{ admincontroller, LandingController };
-use App\Http\Controllers\authcontroller;
+use App\Http\Controllers\{ admincontroller, manageadmincontroller, authcontroller, LandingController };
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -34,9 +33,6 @@ Route::prefix('admin')
     ->name('admin.')
     ->controller(admincontroller::class)
     ->group(function() {
-        Route::get('/dashboard', 'index');
-        Route::get('/{aspirasi}', 'show');
-        Route::get('/create', 'create');
-        Route::post('/{id}', 'store');
-        Route::delete('/{id}', 'delete');
+        Route::get('/dashboard', 'index')->name('list');
+        Route::get('/{aspirasi}', 'show')->name('detail');
 });

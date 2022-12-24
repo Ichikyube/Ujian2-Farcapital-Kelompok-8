@@ -16,7 +16,8 @@
             <thead class="border bg-yellow-600">
                     <tr class="border p-4">
                         <th class="border p-2">No</th>
-                        <th class="border p-2">Cerita</th>
+                        <th class="border p-2">Topik</th>
+                        <th class="border p-2">Sudah Dibaca</th>
                         <th class="border p-2">Foto bukti</th>
                         <th class="border p-2">Action</th>
                     </tr>
@@ -25,7 +26,8 @@
                  @foreach ($aspirasi as $a )
                     <tr class="border">
                         <td class="border p-2">{{ $loop->iteration }}</td>
-                        <td class="border p-2">{{ $a['cerita'] }}</td>
+                        <td class="border p-2">{{ $a['topik'] }}</td>
+                        <td class="border p-2">@if($a['status']) Sudah @else Belum @endif</td>
                         <td class="border p-2">
                              <img src="http://localhost:9000/{{ ($a['foto']) }}" class="w-[100px]"/>
                         </td>

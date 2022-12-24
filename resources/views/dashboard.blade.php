@@ -19,7 +19,7 @@
                     </li>
                     @if(session()->has('logged'))
                     <li><a class="text-[20px] text-slate-900 text-bold font-sans bg-transparent p-3 text-center hover:bg-slate-800 rounded-lg hover:text-white duration-200 hover:ease-in-out "
-                        href="{{ route('') }}">Daftar Aspirasi</a>
+                        href="{{ route('admin.list') }}">Daftar Aspirasi</a>
                     </li>
                     @endif
                     @if(session()->has('logged'))

@@ -60,7 +60,17 @@ class admincontroller extends Controller
             "GET",
             "http://127.0.0.1:9000/api/Aspirasi/" . $id
         );
+
+        $payload['status'] = true;
+        
         $aspirasi = $responseAspirasi['data'];
+
+        $responseAspirasi = HttpClient::fetch(
+            "POST",
+            "http://127.0.0.1:9000/api/Aspirasi/update/" . $id,
+            $payload
+        );
+        
         return view('admin.detail', [
             'title' => 'test',
             'icon' => 'test',

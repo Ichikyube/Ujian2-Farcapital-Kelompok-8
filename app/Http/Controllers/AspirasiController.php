@@ -13,9 +13,14 @@ class AspirasiController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function aspirasi()
+    public function index()
     {
-        return view("forms.aspirasi");
+        $aspirasi =  Aspirasi::latest()->get();
+        return response()->json([
+            'status' => true,
+            'message' => "Data semua aspirasi didapatkan",
+            'data' => $aspirasi
+        ]);
     }
 
 
@@ -29,6 +34,7 @@ class AspirasiController extends Controller
     {
         try {
             $request->validate([
+                'topik' => ['required', 'min:5'],
                 'cerita' => ['required', 'min:20'],
                 'foto' => ['required']
             ]);
@@ -99,27 +105,8 @@ class AspirasiController extends Controller
      */
     public function update(Request $request, Aspirasi $aspirasi)
     {
-        try {
-            $request->validate([
-                'cerita' => ['required', 'min:20']
-            ]);
-
-
-        } catch (\Illuminate\Validation\ValidationException $th) {
-            return response()->json([
-                'status' => false,
-                'message' => $th->validator->errors()
-            ], 403);
-        }
-
-
         $payload = $request->all();
 
-        if($request->file('foto')){
-            $payload['foto'] = $request->file('foto')->store('img/Aspirasi', ['disk' => 'public_uploads']);
-        }
-
-        $payload['status'] = false;
         $aspirasi = $aspirasi->update($payload);
 
         return response()->json([

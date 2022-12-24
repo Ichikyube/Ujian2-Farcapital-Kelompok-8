@@ -18,7 +18,8 @@ class AspirasiFactory extends Factory
     {
         return [
             //
-            'cerita' => $this->faker->paragraph(),
+            'topik' => $this->faker->sentence(mt_rand(5, 8)),
+            'cerita' => $this->faker->paragraph(mt_rand(10, 30)),
             'foto' => 'img/Aspirasi/error.PNG',
             'status' => mt_rand(0, 1)
         ];
