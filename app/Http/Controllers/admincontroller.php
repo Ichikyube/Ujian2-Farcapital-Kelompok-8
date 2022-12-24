@@ -33,7 +33,7 @@ class admincontroller extends Controller
         if(!session()->isStarted()) session()->start();
             session()->put("logged", "yes", true);
             session()->put("idadmin", $admin->id);
-            return redirect()->route("admin.listadmin");
+            return redirect()->route("admin.list");
 
     }
 
@@ -62,7 +62,7 @@ class admincontroller extends Controller
         );
 
         $payload['status'] = true;
-        
+
         $aspirasi = $responseAspirasi['data'];
 
         $responseAspirasi = HttpClient::fetch(
@@ -70,11 +70,61 @@ class admincontroller extends Controller
             "http://127.0.0.1:9000/api/Aspirasi/update/" . $id,
             $payload
         );
-        
+
         return view('admin.detail', [
             'title' => 'test',
             'icon' => 'test',
             "aspirasi" => $aspirasi
         ]);
+    }
+
+    public function list(){
+        $admins = admin::query()->get();
+        return view('admin.listadmin', [
+            'admins' => $admins
+        ]);
+    }
+
+    public function store(){
+        return view('admin.storeadmin');
+    }
+
+    public function create(Request $rq){
+        $admins = [
+            'nama' => $rq->input('nama'),
+            'email' => $rq->input('email'),
+            'password' => $rq->input('password')
+        ];
+
+        admin::query()->create($admins);
+        return redirect(route('admin.listadmin'));
+    }
+
+    public function detail($id){
+        $admin =  admin::query()->where('id', $id)->first();
+        return view('admin.detail');
+    }
+
+    public function showupdate($id){
+        $admin =  admin::query()->where('id', $id)->first();
+        return view('admin.updateadmin', [
+            'admins' => $admin
+        ]);
+    }
+
+    public function update(Request $rq, $id){
+        $admins = [
+            'nama' => $rq->input('nama'),
+            'email' => $rq->input('email'),
+            'password' => $rq->input('password')
+        ];
+
+        admin::query()->where('id', $id)->update($admins);
+        return redirect(route('admin.listadmin'));
+    }
+
+    public function delete($id){
+        $admin = admin::query()->where('id', $id)->delete();
+        return redirect()->back();
     }
 }
