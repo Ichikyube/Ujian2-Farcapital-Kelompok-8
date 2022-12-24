@@ -148,7 +148,7 @@ class AspirasiController extends Controller
             'status' => true,
             'message' => 'Data aspirasi berhasil dihapus',
             'data' => $aspirasi
-        ]), 204;
+        ], 204);
     }
 }
 
