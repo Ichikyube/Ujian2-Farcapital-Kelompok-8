@@ -1,7 +1,6 @@
 <?php
 
-use App\Http\Controllers\admincontroller;
-use App\Http\Controllers\authcontroller;
+use App\Http\Controllers\{ admincontroller, LandingController };
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -21,6 +20,15 @@ Route::get('/', function () {
 
 Route::any('/login', [admincontroller::class, 'login'])->name('admin.login');
 Route::any('/logout', [admincontroller::class, 'logout'])->name('admin.logout');
+
+Route::any('/form', [LandingController::class, 'aspirasi'])->name('form.aspirasi');
+
+Route::prefix('form')
+    ->name('form.')
+    ->controller(LandingController::class)
+    ->group(function(){
+        Route::get('/aspirasi', 'aspirasi')->name('aspirasi');
+    });
 
 Route::prefix('admin')
     ->controller(AdminController::class)
