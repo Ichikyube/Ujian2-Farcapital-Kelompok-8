@@ -56,7 +56,7 @@ class AspirasiController extends Controller
                 'status' => false,
                 'message' => 'Foto yang anda kirim tidak valid',
                 'data' => null
-            ]);
+            ], 403);
         }
 
         $payload['status'] = false;
@@ -67,7 +67,7 @@ class AspirasiController extends Controller
             'status' => true,
             'message' => 'aspirasi berhasil ditambahkan',
             'data' => $aspirasi
-        ]);
+        ], 201);
     }
     
     /**
@@ -85,7 +85,7 @@ class AspirasiController extends Controller
                 'status' => true,
                 'message' => 'Data aspirasi tidak ditemukan',
                 'data' => null
-            ]);
+            ], 404);
         }
 
         return response()->json([
@@ -131,7 +131,7 @@ class AspirasiController extends Controller
             'status' => true,
             'message' => 'Data aspirasi berhasil diupdata',
             'data' => $aspirasi
-        ]);
+        ], 204);
     }
 
     /**
@@ -148,7 +148,7 @@ class AspirasiController extends Controller
             'status' => true,
             'message' => 'Data aspirasi berhasil dihapus',
             'data' => $aspirasi
-        ]);
+        ]), 204;
     }
 }
 
