@@ -20,12 +20,19 @@
                         <td class="border p-2">{{ $admin->nama }}</td>
                         <td class="border p-2">{{ $admin->email }}</td>
                         <td class="flex gap-2 p-4 item-center">
+                            @if($admin->nama == 'admin' && $admin->email == 'admin@gmail.com')
+                            <div class="bg-cyan-800 p-2 rounded-lg w-full text-white text-center">
+                                <a href=""><button>SUPER ADMIN</button></a>
+                            </div>
+                            @endif
+                            @if($admin->nama != 'admin' && $admin->email != 'admin@gmail.com')
                             <div class="bg-green-800 p-2 rounded-lg w-32 text-white text-center">
                                 <a href="{{ route("admin.showupdate", ["id"=>$admin->id]) }}"><button>Update</button></a>
                             </div>
                             <div class="bg-red-700 p-2 rounded-lg w-32 text-white text-center">
                                 <a href="{{ route("admin.deleteadmin", ["id"=>$admin->id]) }}"><button>Delete</button></a>
                             </div>
+                            @endif
                         </td>
                     </tr>
                 @endforeach
