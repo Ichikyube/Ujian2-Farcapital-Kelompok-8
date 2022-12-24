@@ -21,3 +21,13 @@ Route::get('/', function () {
 
 Route::any('/login', [admincontroller::class, 'login'])->name('admin.login');
 Route::any('/logout', [admincontroller::class, 'logout'])->name('admin.logout');
+
+Route::prefix('admin')
+    ->controller(AdminController::class)
+    ->group(function() {
+        Route::get('/dashboard', 'index');
+        Route::get('/{aspirasi}', 'show');
+        Route::get('/create', 'create');
+        Route::post('/{id}', 'store');
+        Route::delete('/{id}', 'delete');
+});
