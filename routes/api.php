@@ -29,5 +29,4 @@ Route::prefix('Aspirasi')
         
         Route::post('/', 'store')->name('store');
         Route::post('/update/{aspirasi}', 'update')->name('update');
-        Route::post('/{aspirasi}', 'destroy')->name('destroy');
     });
