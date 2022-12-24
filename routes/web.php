@@ -1,8 +1,7 @@
 <?php
 
-use App\Http\Controllers\admincontroller;
+use App\Http\Controllers\{ admincontroller, LandingController };
 use App\Http\Controllers\authcontroller;
-use App\Http\Controllers\manageadmincontroller;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -40,13 +39,4 @@ Route::prefix('admin')
         Route::get('/create', 'create');
         Route::post('/{id}', 'store');
         Route::delete('/{id}', 'delete');
-});
-
-Route::prefix('Admin')->group(function() {
-    Route::get('/', [manageadmincontroller::class, 'index'])->name('admin.listadmin');
-    Route::get('/store', [manageadmincontroller::class, 'store'])->name('admin.storeadmin');
-    Route::get('/showUpdate/{id}', [manageadmincontroller::class, 'showupdate'])->name('admin.showupdate');
-    Route::post('/createadmin', [manageadmincontroller::class, 'create'])->name('admin.createadmin');
-    Route::post('/update/{id}', [manageadmincontroller::class, 'update'])->name('admin.updateadmin');
-    Route::get('/delete/{id}', [manageadmincontroller::class, 'delete'])->name('admin.deleteadmin');
 });
