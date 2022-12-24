@@ -25,8 +25,6 @@
             <x-nav-link :href="route('admin.list')" :active="request()->routeIs('admin.list')">
                 {{ __('Daftar Aspirasi') }}
             </x-nav-link>
-            @endif
-            @if(session()->has('logged'))
             <x-nav-link :href="route('admin.listadmin')" :active="request()->routeIs('blogs.list')">
                 {{ __('Daftar Admin') }}
             </x-nav-link>
