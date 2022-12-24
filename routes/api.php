@@ -20,13 +20,6 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
     return $request->user();
 });
 
-<<<<<<< HEAD
-Route::prefix('form')
-        ->controller(AspirasiController::class)
-        ->group(function() {
-            Route::post('/aspirasi', "store");
-        });
-=======
 Route::prefix('Aspirasi')
     ->name('aspirasi.')
     ->controller(AspirasiController::class)
@@ -36,6 +29,4 @@ Route::prefix('Aspirasi')
         
         Route::post('/', 'store')->name('store');
         Route::post('/update/{aspirasi}', 'update')->name('update');
-        Route::post('/{aspirasi}', 'destroy')->name('destroy');
     });
->>>>>>> 6fa6f0f48637c154c4488b4c9e63931852f145c9

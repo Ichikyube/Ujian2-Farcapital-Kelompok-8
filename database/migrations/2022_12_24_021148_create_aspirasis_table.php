@@ -16,7 +16,7 @@ return new class extends Migration
         Schema::create('aspirasis', function (Blueprint $table) {
             $table->id();
             $table->text('cerita');
-            $table->text('foto');
+            $table->string('foto');
             $table->boolean('status');
             $table->timestamps();
         });
