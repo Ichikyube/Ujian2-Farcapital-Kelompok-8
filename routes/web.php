@@ -31,11 +31,9 @@ Route::prefix('form')
     });
 
 Route::prefix('admin')
-    ->controller(AdminController::class)
+    ->name('admin.')
+    ->controller(admincontroller::class)
     ->group(function() {
-        Route::get('/dashboard', 'index');
-        Route::get('/{aspirasi}', 'show');
-        Route::get('/create', 'create');
-        Route::post('/{id}', 'store');
-        Route::delete('/{id}', 'delete');
+        Route::get('/dashboard', 'index')->name('list');
+        Route::get('/{aspirasi}', 'show')->name('detail');
 });

@@ -3,7 +3,8 @@
 namespace App\Http\Controllers;
 
 use App\Models\admin;
-use Illuminate\Http\Request;
+use Illuminate\Http\{ Request, Response };
+use App\Helpers\HttpClient;
 use Illuminate\Support\Facades\Hash;
 
 class admincontroller extends Controller
@@ -39,5 +40,31 @@ class admincontroller extends Controller
     public function logout(){
         session()->flush();
         return redirect(route('login'));
+    }
+
+    public function index(){
+        $responseAspirasi = HttpClient::fetch(
+            "GET",
+            "http://127.0.0.1:9000/api/Aspirasi"
+        );
+        $aspirasi = $responseAspirasi['data'];
+        return view('admin.list', [
+            'title' => 'test',
+            'icon' => 'test',
+            "aspirasi" => $aspirasi
+        ]);
+    }
+
+    public function show($id){
+        $responseAspirasi = HttpClient::fetch(
+            "GET",
+            "http://127.0.0.1:9000/api/Aspirasi/" . $id
+        );
+        $aspirasi = $responseAspirasi['data'];
+        return view('admin.detail', [
+            'title' => 'test',
+            'icon' => 'test',
+            "aspirasi" => $aspirasi
+        ]);
     }
 }
