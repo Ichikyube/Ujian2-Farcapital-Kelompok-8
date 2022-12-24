@@ -21,8 +21,6 @@ Route::get('/', function () {
 Route::any('/login', [admincontroller::class, 'login'])->name('admin.login');
 Route::any('/logout', [admincontroller::class, 'logout'])->name('admin.logout');
 
-Route::any('/form', [LandingController::class, 'aspirasi'])->name('form.aspirasi');
-
 Route::prefix('form')
     ->name('form.')
     ->controller(LandingController::class)
