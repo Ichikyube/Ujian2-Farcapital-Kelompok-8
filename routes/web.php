@@ -27,6 +27,7 @@ Route::prefix('form')
     ->controller(LandingController::class)
     ->group(function(){
         Route::get('/aspirasi', 'aspirasi')->name('aspirasi');
+        Route::post('/store', 'store')->name('store');
     });
 
 Route::prefix('admin')
