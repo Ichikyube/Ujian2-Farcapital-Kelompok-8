@@ -6,10 +6,9 @@
     <div class=" bg-white rounded-md px-6 py-10 max-w-2xl mx-auto">
       <h1 class="text-center text-2xl font-bold text-gray-500 mb-10">ASPIRASI ANDA</h1>
       <div class="space-y-4">
-        @dd(session()->all())
         @if($errors->any())
           @foreach ($errors->all() as $e)
-            <div class="bg-red-500 w-full p-2 mt-2">{{ $e }}</div>   
+            <div class="bg-red-500 w-full p-2 mt-2">{{ $e }}</div>
           @endforeach
         @endif
         @if (session()->has('success'))
