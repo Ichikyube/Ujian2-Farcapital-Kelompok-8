@@ -13,14 +13,9 @@ class AspirasiController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
+    public function aspirasi()
     {
-        $aspirasi =  Aspirasi::all();
-        return response()->json([
-            'status' => true,
-            'message' => "Data semua aspirasi didapatkan",
-            'data' => $aspirasi
-        ]);
+        return view("forms.aspirasi");
     }
 
 
@@ -44,7 +39,7 @@ class AspirasiController extends Controller
             ], 403);
         }
 
-        
+
         $payload = $request->all();
 
         if($request->file('foto')){
@@ -60,7 +55,7 @@ class AspirasiController extends Controller
         }
 
         $payload['status'] = false;
-        
+
         $aspirasi = Aspirasi::create($payload);
 
         return response()->json([
@@ -69,7 +64,7 @@ class AspirasiController extends Controller
             'data' => $aspirasi
         ], 201);
     }
-    
+
     /**
      * Display the specified resource.
      *
@@ -79,7 +74,7 @@ class AspirasiController extends Controller
     public function show($id)
     {
         $aspirasi = Aspirasi::find($id);
-        
+
         if(!$aspirasi){
             return response()->json([
                 'status' => true,
@@ -117,7 +112,7 @@ class AspirasiController extends Controller
             ], 403);
         }
 
-        
+
         $payload = $request->all();
 
         if($request->file('foto')){
