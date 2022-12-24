@@ -47,12 +47,39 @@
         <label for="foto">
             <span class="label">Choose file</span>
         </label>
-        <input class="field-file" type="file" id="foto" name="foto">
+        <input class="field-file" type="file" accept=".jpg, .jpeg, .png" id="foto" name="foto">
+        <img src="" id="img" alt="">
         <button class=" px-6 py-2 mx-auto block rounded-md  font-semibold text-indigo-100 bg-blue-600  ">Sampaikan</button>
     </div>
     </div>
   </div>
 </form>
+@push('scripts')
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.3/jquery.min.js" integrity="sha512-STof4xm1wgkfm7heWqFJVn58Hm3EtS31XFaagaa8VMReCXAkQnJZ+jEy8PCC/iT18dFy95WcExNHFTqLyp72eQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+<script>
+$(function(){
+  $('#foto').change(function(){
+    var input = this;
+    var url = $(this).val();
+    var ext = url.substring(url.lastIndexOf('.') + 1).toLowerCase();
+    if (input.files && input.files[0]&& (ext == "gif" || ext == "png" || ext == "jpeg" || ext == "jpg"))
+     {
+        var reader = new FileReader();
+
+        reader.onload = function (e) {
+           $('#img').attr('src', e.target.result);
+        }
+       reader.readAsDataURL(input.files[0]);
+    }
+    else
+    {
+      $('#img').attr('src', '/assets/no_preview.png');
+    }
+  });
+
+});
+  </script>
+@endpush
 </x-app-layout>
 
 

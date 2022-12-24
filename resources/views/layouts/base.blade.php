@@ -11,6 +11,7 @@
 </head>
 
 <body class="antialiased">
+    @stack('scripts')
     <div class="container mx-auto">
         @include('layouts.navigation')
         <!-- Page Content -->
@@ -18,7 +19,7 @@
             {{ $slot }}
         </main>
     </div>
-     @stack('scripts')
+
 </body>
 
 </html>
