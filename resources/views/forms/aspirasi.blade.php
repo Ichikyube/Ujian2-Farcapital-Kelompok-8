@@ -1,5 +1,5 @@
 <x-app-layout>
-<form method="POST" action="{{ route('form.store') }}" enctype="multipart/form-data">
+<form method="POST" action="{{ route('form.store') }}" enctype="multipart/form-data" id="form">
     @csrf
     <!--x-input-error  :message="$message" /-->
 <div class="bg-indigo-50 min-h-screen md:px-20 pt-6">
@@ -48,7 +48,7 @@
             <span class="label">Choose file</span>
         </label>
         <input class="field-file" type="file" id="foto" name="foto">
-        <button class=" px-6 py-2 mx-auto block rounded-md  font-semibold text-indigo-100 bg-blue-600  ">Sampaikan</button>
+        <button class=" px-6 py-2 mx-auto block rounded-md  font-semibold text-indigo-100 bg-blue-600" id="submit">Sampaikan</button>
     </div>
     </div>
   </div>
@@ -220,6 +220,10 @@ function addFile(target, file) {
   target.prepend(clone);
 
   FILES[objectURL] = file;
+  var form = document.getElementById("form");
+  form = new FormData(form);
+  form.append('file[]', file)
+  console.log(form);
 }
 
 const gallery = document.getElementById("gallery"),
@@ -285,9 +289,10 @@ gallery.onclick = ({ target }) => {
 };
 
 // print all selected files
-document.getElementById("submit").onclick = () => {
+document.getElementById("submit").onclick = (e) => {
+  e.preventDefault();
   alert(`Submitted Files:\n${JSON.stringify(FILES)}`);
-  console.log(FILES);
+  console.log(FILES, form);
 };
 
 // clear entire selection
