@@ -9,7 +9,7 @@ class LandingController extends Controller
 {
     public function aspirasi()
     {
-        return view("forms.aspirasi", response());
+        return view("forms.aspirasi");
     }
 
     public function store(Request $request){
