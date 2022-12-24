@@ -13,18 +13,14 @@ class AspirasiController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function aspirasi()
+    public function index()
     {
-<<<<<<< HEAD
         $aspirasi =  Aspirasi::latest()->get();
         return response()->json([
             'status' => true,
             'message' => "Data semua aspirasi didapatkan",
             'data' => $aspirasi
         ]);
-=======
-        return view("forms.aspirasi");
->>>>>>> d3a58fc8834660a09262dfa2b088112a07670fff
     }
 
 
@@ -109,23 +105,6 @@ class AspirasiController extends Controller
      */
     public function update(Request $request, Aspirasi $aspirasi)
     {
-<<<<<<< HEAD
-=======
-        try {
-            $request->validate([
-                'cerita' => ['required', 'min:20']
-            ]);
-
-
-        } catch (\Illuminate\Validation\ValidationException $th) {
-            return response()->json([
-                'status' => false,
-                'message' => $th->validator->errors()
-            ], 403);
-        }
-
-
->>>>>>> d3a58fc8834660a09262dfa2b088112a07670fff
         $payload = $request->all();
 
         $aspirasi = $aspirasi->update($payload);
