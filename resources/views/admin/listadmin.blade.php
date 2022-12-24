@@ -35,7 +35,7 @@
                                 <a href="{{ route("admin.showupdate", ["id"=>$admin->id]) }}"><button>Update</button></a>
                             </div>
                             <div class="bg-red-700 p-2 rounded-lg w-32 text-white text-center">
-                                <a href="{{ route("admin.delete", ["id"=>$admin->id]) }}"><button>Delete</button></a>
+                                <a href="{{ route("admin.deleteadmin", ["id"=>$admin->id]) }}"><button>Delete</button></a>
                             </div>
                         </td>
                     </tr>

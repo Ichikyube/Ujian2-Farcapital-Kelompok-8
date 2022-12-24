@@ -11,7 +11,7 @@ class admincontroller extends Controller
 {
     public function login(Request $rq){
         if($rq->method() == "GET"){
-            return view('login');
+            return view('admin.login');
         }
 
         $email = $rq->input('email');
@@ -33,13 +33,13 @@ class admincontroller extends Controller
         if(!session()->isStarted()) session()->start();
             session()->put("logged", "yes", true);
             session()->put("idadmin", $admin->id);
-            return redirect()->route("welcome");
+            return redirect()->route("admin.listadmin");
 
     }
 
     public function logout(){
         session()->flush();
-        return redirect(route('login'));
+        return redirect(route('admin.listadmin'));
     }
 
     public function index(){
