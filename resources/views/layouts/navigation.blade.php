@@ -12,19 +12,23 @@
     </div>
     <div class="hidden absolute top-1/2 left-1/2 transform -translate-y-1/2 -translate-x-1/2 lg:flex lg:mx-auto lg:items-center lg:w-auto lg:space-x-6" id="nav-content">
         <div class="flex gap-14">
-            @if(Route::is('welcome'))
-            <x-nav-link :href="route('form.aspirasi')">
-                {{ __('Suara Anda') }}
-            </x-nav-link>
-            @else
-            <x-nav-link :href="route('welcome')" :active="request()->routeIs('welcome')">
-                {{ __('Beranda') }}
-            </x-nav-link>
+            @if(!session()->has('logged'))
+                @if(Route::is('welcome') )
+                <x-nav-link :href="route('form.aspirasi')">
+                    {{ __('Suara Anda') }}
+                </x-nav-link>
+                @else
+                <x-nav-link :href="route('welcome')" :active="request()->routeIs('welcome')">
+                    {{ __('Beranda') }}
+                </x-nav-link>
+                @endif
             @endif
             @if(session()->has('logged'))
             <x-nav-link :href="route('admin.list')" :active="request()->routeIs('admin.list')">
                 {{ __('Daftar Aspirasi') }}
             </x-nav-link>
+            @endif
+            @if(session()->has('logged'))
             <x-nav-link :href="route('admin.listadmin')" :active="request()->routeIs('blogs.list')">
                 {{ __('Daftar Admin') }}
             </x-nav-link>
@@ -33,15 +37,15 @@
 
         @if (Route::has('admin.login'))
         <div class="hidden px-6 py-4 sm:block">
-            @auth
-            <a href="{{ url('/home') }}" class="hidden lg:inline-block lg:ml-auto lg:mr-3 py-2 px-6 bg-gray-50 hover:bg-gray-100 text-sm text-gray-900 font-bold  rounded-xl transition duration-200">Home</a>
+            @if (session()->has('logged'))
+            <x-nav-link :href="route('admin.logout')" :active="request()->routeIs('admin.logout')">
+                {{ __('Logout') }}
+            </x-nav-link>
             @else
-            <a href="{{ route('admin.login') }}"
-                class="hidden lg:inline-block py-2 px-6 bg-stone-900 hover:bg-blue-600 text-sm text-white font-bold rounded-xl transition duration-200">Log
-                in</a>
-
-
-            @endauth
+            <x-nav-link :href="route('admin.login')" :active="request()->routeIs('admin.login')">
+                {{ __('Login') }}
+            </x-nav-link>
+            @endif
         </div>
         @endif
     </div>
@@ -63,10 +67,11 @@
         </div>
         <div>
             <div class="hidden space-x-8 sm:-my-px sm:ml-10 sm:flex flex-grow lg:flex lg:items-center lg:w-auto mt-2 lg:mt-0 bg-gray-100 md:bg-transparent z-20" id="nav-content">
+                @if(!Route::is('welcome') )
                 <x-nav-link :href="route('welcome')" :active="request()->routeIs('welcome')">
                     {{ __('Beranda') }}
                 </x-nav-link>
-
+                @endif
                 @if (session()->has('logged'))
                 <x-nav-link :href="route('admin.logout')" :active="request()->routeIs('admin.logout')">
                     {{ __('Logout') }}

@@ -8,7 +8,7 @@
       <div class="space-y-4">
         @if($errors->any())
           @foreach ($errors->all() as $e)
-            <div class="bg-red-500 w-full p-2 mt-2">{{ $e }}</div>   
+            <div class="bg-red-500 w-full p-2 mt-2">{{ $e }}</div>
           @endforeach
         @endif
         @if (session()->has('success'))
@@ -48,8 +48,8 @@
             <span class="label">Choose file</span>
         </label>
         <input class="field-file" type="file" id="foto" name="foto">
-        <button class=" px-6 py-2 mx-auto block rounded-md text-lg font-semibold text-indigo-100 bg-indigo-600  ">ADD POST</button>
-      </div>
+        <button class=" px-6 py-2 mx-auto block rounded-md  font-semibold text-indigo-100 bg-blue-600  ">Sampaikan</button>
+    </div>
     </div>
   </div>
 </form>
