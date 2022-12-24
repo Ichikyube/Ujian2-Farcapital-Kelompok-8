@@ -11,7 +11,7 @@
     <div class="mx-auto w-[1000px] shadow-xl p-14 mt-20">
         <h1 class="text-[50px] font-bold text-slate-900 text-center mb-[40px]" >Update <span class="text-[50px] font-bold text-yellow-600 ">Post</span></h1>
         <div class="w-[700px] mx-auto">
-            <form method="post" action="{{ route('admin.update', ["id"=>$admins->id]) }}">
+            <form method="post" action="{{ route('admin.updateadmin', ["id"=>$admins->id]) }}">
                 @method('put')
                 @csrf
                 <div class="flex">
