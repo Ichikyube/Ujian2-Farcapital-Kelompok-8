@@ -1,5 +1,5 @@
 <x-app-layout>
-<form method="POST" action="{{ route('form.store') }}" enctype="multipart/form-data">
+<form method="POST" action="{{ route('form.store') }}" enctype="multipart/form-data" id="form">
     @csrf
     <!--x-input-error  :message="$message" /-->
 <div class="bg-indigo-50 min-h-screen md:px-20 pt-6">
@@ -81,8 +81,4 @@ $(function(){
   </script>
 @endpush
 </x-app-layout>
-
-
-
-
 

@@ -1,5 +1,9 @@
+<<<<<<< HEAD
 <x-app-layout>
     <section class="w-full mx-auto md:w-2/3 flex flex-col items-center px-3">
+=======
+@extends('dashboard');
+>>>>>>> test
 
         <article class="flex flex-col shadow my-4">
             <!-- Article Image -->
@@ -34,6 +38,10 @@
             </div>
         </article>
     </section>
+<<<<<<< HEAD
 </x-app-layout>
 
 
+=======
+@endsection
+>>>>>>> test
