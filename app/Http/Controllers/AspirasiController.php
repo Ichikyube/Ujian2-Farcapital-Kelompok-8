@@ -36,6 +36,10 @@ class AspirasiController extends Controller
             $request->validate([
                 'topik' => ['required', 'min:5'],
                 'cerita' => ['required', 'min:20'],
+                'jenis_laporan' => ['required'],
+                'alamat' => ['required'],
+                'kecamatan' => ['required'],
+                'kabupaten' => ['required'],
                 'foto' => ['required']
             ]);
         } catch (\Illuminate\Validation\ValidationException $th) {

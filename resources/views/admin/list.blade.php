@@ -21,6 +21,10 @@
                     <tr class="border p-4">
                         <th class="border p-2">No</th>
                         <th class="border p-2">Topik</th>
+                        <th class="border p-2">Jenis Laporan</th>
+                        <th class="border p-2">Alamat</th>
+                        <th class="border p-2">Kecamatan</th>
+                        <th class="border p-2">Kabupaten</th>
                         <th class="border p-2">Sudah Dibaca</th>
                         <th class="border p-2">Foto bukti</th>
                         <th class="border p-2">Action</th>
@@ -31,6 +35,10 @@
                     <tr class="border">
                         <td class="border p-2">{{ $loop->iteration }}</td>
                         <td class="border p-2">{{ $a['topik'] }}</td>
+                        <td class="border p-2">{{ $a['jenis_laporan'] }}</td>
+                        <td class="border p-2">{{ $a['alamat'] }}</td>
+                        <td class="border p-2">{{ $a['kecamatan'] }}</td>
+                        <td class="border p-2">{{ $a['kabupaten'] }}</td>
                         <td class="border p-2">@if($a['status']) Sudah @else Belum @endif</td>
                         <td class="border p-2">
                              <img src="http://localhost:9000/{{ ($a['foto']) }}" class="w-[100px]"/>
