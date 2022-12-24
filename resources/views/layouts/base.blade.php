@@ -12,6 +12,7 @@
 
 <body class="antialiased">
     <div class="container mx-auto">
+        @include('layouts.navigation')
         <!-- Page Content -->
         <main>
             {{ $slot }}

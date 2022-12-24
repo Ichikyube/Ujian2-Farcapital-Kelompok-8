@@ -1,14 +1,4 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <link rel="stylesheet" href="https://unpkg.com/flowbite@1.5.5/dist/flowbite.min.css" />
-    <script src="https://cdn.tailwindcss.com"></script>
-    <title>Blog-C</title>
-</head>
-<body>
+<x-app-layout>
     <div class="w-[1370px] mx-auto p-2">
         <div class="w-[1250px] mx-auto">
             <nav class="flex gap-20 items-center">
@@ -45,5 +35,4 @@
             @yield('content')
         </div>
     </div>
-</body>
-</html>
+</x-app-layout>

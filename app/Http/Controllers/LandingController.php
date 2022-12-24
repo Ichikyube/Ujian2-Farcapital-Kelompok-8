@@ -8,7 +8,7 @@ class LandingController extends Controller
 {
     public function aspirasi()
     {
-        return view("forms.aspirasi");
+        return view("forms.aspirasi", response());
     }
 
 }
