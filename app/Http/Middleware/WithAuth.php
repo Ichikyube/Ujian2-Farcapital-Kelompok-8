@@ -18,7 +18,7 @@ class WithAuth
     {
         if(!session()->isStarted()) session()->start();
         if(!session()->get("logged", false)) {
-            return redirect()->route('login')->withErrors([
+            return redirect()->route('admin.login')->withErrors([
                 "msg" => "Mohon Login Terlebih Dahulu"
             ]);
         }

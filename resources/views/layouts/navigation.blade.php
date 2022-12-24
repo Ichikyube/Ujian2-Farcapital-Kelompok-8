@@ -25,6 +25,8 @@
             <x-nav-link :href="route('admin.list')" :active="request()->routeIs('admin.list')">
                 {{ __('Daftar Aspirasi') }}
             </x-nav-link>
+            @endif
+            @if(session()->has('logged'))
             <x-nav-link :href="route('admin.listadmin')" :active="request()->routeIs('blogs.list')">
                 {{ __('Daftar Admin') }}
             </x-nav-link>
@@ -37,10 +39,7 @@
             <a href="{{ url('/home') }}" class="hidden lg:inline-block lg:ml-auto lg:mr-3 py-2 px-6 bg-gray-50 hover:bg-gray-100 text-sm text-gray-900 font-bold  rounded-xl transition duration-200">Home</a>
             @else
             <a href="{{ route('admin.login') }}"
-                class="hidden lg:inline-block py-2 px-6 bg-stone-900 hover:bg-blue-600 text-sm text-white font-bold rounded-xl transition duration-200">Log
-                in</a>
-
-
+                class="hidden lg:inline-block py-2 px-6 bg-stone-900 hover:bg-blue-600 text-sm text-white font-bold rounded-xl transition duration-200">Login</a>
             @endauth
         </div>
         @endif

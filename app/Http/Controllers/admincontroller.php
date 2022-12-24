@@ -39,7 +39,7 @@ class admincontroller extends Controller
 
     public function logout(){
         session()->flush();
-        return redirect(route('admin.listadmin'));
+        return redirect(route('welcome'));
     }
 
     public function index(){
