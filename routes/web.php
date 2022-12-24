@@ -1,5 +1,7 @@
 <?php
 
+use App\Http\Controllers\admincontroller;
+use App\Http\Controllers\authcontroller;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -15,4 +17,7 @@ use Illuminate\Support\Facades\Route;
 
 Route::get('/', function () {
     return view('welcome');
-});
+})->name('welcome');
+
+Route::any('/login', [admincontroller::class, 'login'])->name('admin.login');
+Route::any('/logout', [admincontroller::class, 'logout'])->name('admin.logout');
