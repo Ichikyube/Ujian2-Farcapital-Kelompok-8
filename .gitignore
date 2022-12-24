@@ -17,4 +17,8 @@ yarn-error.log
 /.idea
 /.vscode
 composer.lock
+<<<<<<< HEAD
 package-lock.json
+=======
+package-lock.json
+>>>>>>> origin/main
