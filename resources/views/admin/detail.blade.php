@@ -1,10 +1,6 @@
-<<<<<<< HEAD
-@extends('dashboard');
-
-
-@section('content')
+<x-app-layout>
     <section class="w-full md:w-2/3 flex flex-col items-center px-3">
-    
+
         <article class="flex flex-col shadow my-4">
             <!-- Article Image -->
             <a href="#" class="hover:opacity-75">
@@ -14,12 +10,12 @@
                 <div class="flex justify-between">
                     <a href="#" class="text-yellow-600 text-sm font-bold uppercase pb-4">{{ $aspirasi['topik'] }}</a>
                 </div>
-                <a href="#" class="text-3xl font-bold hover:text-gray-700 pb-4">Jenis Laporan : 
+                <a href="#" class="text-3xl font-bold hover:text-gray-700 pb-4">Jenis Laporan :
                     @if ($aspirasi['jenis_laporan'] == 1)
                         Aspirasi
                     @else
                         Pengaduan
-                    @endif  
+                    @endif
                 </a>
                 <p href="" class="text-sm pb-8">
                     Laporan dari : <a class="font-semibold hover:text-gray-800">{{ $aspirasi['alamat'] }}</a>
@@ -38,20 +34,6 @@
             </div>
         </article>
     </section>
-@endsection
-=======
-<x-app-layout>
-    @csrf
-    <div class="w-[1250px] mx-auto shadow-lg mt-10 p-6">
-        <div class="mx-auto">
-            <h1 class="text-[70px] font-bold text-center">{{ $aspirasi['topik'] }}</h1>
-            <div class="flex justify-center">
-                <img src="http://localhost:9000/{{ $aspirasi['foto'] }}" class="w-[600px]">
-            </div>
-            <div class="mt-4">
-                <p class="text-[18px] text-slate-900">{{ $aspirasi['cerita'] }}</p>
-            </div>
-        </div>
-    </div>
 </x-app-layout>
->>>>>>> 605cc38f660f711e27e3d4e4c54293b379d8062d
+
+
