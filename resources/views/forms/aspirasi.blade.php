@@ -28,8 +28,8 @@
             <span class="label">Choose file</span>
         </label>
         <input class="field-file" type="file" id="foto" name="foto">
-        <button class=" px-6 py-2 mx-auto block rounded-md text-lg font-semibold text-indigo-100 bg-indigo-600  ">ADD POST</button>
-      </div>
+        <button class=" px-6 py-2 mx-auto block rounded-md  font-semibold text-indigo-100 bg-blue-600  ">Sampaikan</button>
+    </div>
     </div>
   </div>
 </form>

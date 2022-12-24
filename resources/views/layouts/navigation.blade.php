@@ -35,12 +35,15 @@
 
         @if (Route::has('admin.login'))
         <div class="hidden px-6 py-4 sm:block">
-            @auth
-            <a href="{{ url('/home') }}" class="hidden lg:inline-block lg:ml-auto lg:mr-3 py-2 px-6 bg-gray-50 hover:bg-gray-100 text-sm text-gray-900 font-bold  rounded-xl transition duration-200">Home</a>
+            @if (session()->has('logged'))
+            <x-nav-link :href="route('admin.logout')" :active="request()->routeIs('admin.logout')">
+                {{ __('Logout') }}
+            </x-nav-link>
             @else
-            <a href="{{ route('admin.login') }}"
-                class="hidden lg:inline-block py-2 px-6 bg-stone-900 hover:bg-blue-600 text-sm text-white font-bold rounded-xl transition duration-200">Login</a>
-            @endauth
+            <x-nav-link :href="route('admin.login')" :active="request()->routeIs('admin.login')">
+                {{ __('Login') }}
+            </x-nav-link>
+            @endif
         </div>
         @endif
     </div>

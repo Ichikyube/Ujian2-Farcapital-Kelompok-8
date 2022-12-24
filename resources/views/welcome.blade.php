@@ -3,7 +3,6 @@
     <style>
         body {
             font-family: 'Nunito', sans-serif;
-            background-color: rebeccapurple;
         }
     </style>
     @endpush
@@ -15,7 +14,7 @@
         <div class="mt-6 bg-white dark:bg-gray-800 overflow-hidden shadow sm:rounded-lg">
             <div class="container p-6 border-t border-gray-200 dark:border-gray-700 md:border-t-0 md:border-l">
                 <h1 class="flex text-2xl font-bold pb-3">Background and Strategic Fit</h1>
-                <p class="flex items-center pb-3">Sistem Aspirasi digunakan untuk mempermudah Masyarakat dalam menyampaikan Aspirasi kepada
+                <p class="flex items-center pb-3">AspirasiQ digunakan untuk mempermudah Masyarakat dalam menyampaikan Aspirasi kepada
                     pemerintahan daerah. Selain itu, sistem ini juga diharapkan dapat mempermudah kinerja pegawai
                     pemerintahan daerah dalam menampung Aspirasi Masyarakat. Terdapat dua user yang akan
                     berinteraksi dalam Sistem Aspirasi ini, yaitu Masyarakat sebagai User dan Pegawai Pemerintahan
@@ -23,11 +22,9 @@
             </div>
 
             <div class="grid grid-cols-1 md:grid-cols-2">
-                <div class="p-6">
-                    <div class="ml-12">
-                        <div class="mt-2 text-gray-600 dark:text-gray-400 text-sm">
-                            <img src="{{ asset('storage/1.jpeg') }}" alt="aspirasi kita" srcset="">
-                        </div>
+                <div class="ml-12">
+                    <div class="mt-2 text-gray-600 dark:text-gray-400 text-sm">
+                        <img src="{{ asset('storage/1.jpeg') }}" alt="aspirasi kita" srcset="">
                     </div>
                 </div>
 
