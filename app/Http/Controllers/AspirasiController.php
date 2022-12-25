@@ -15,7 +15,7 @@ class AspirasiController extends Controller
      */
     public function index()
     {
-        $aspirasi =  Aspirasi::latest()->get();
+        $aspirasi =  Aspirasi::orderBy('status', 'ASC')->latest()->get();
         return response()->json([
             'status' => true,
             'message' => "Data semua aspirasi didapatkan",
@@ -115,7 +115,7 @@ class AspirasiController extends Controller
 
         return response()->json([
             'status' => true,
-            'message' => 'Data aspirasi berhasil diupdata',
+            'message' => 'Data aspirasi berhasil diupdate',
             'data' => $aspirasi
         ], 204);
     }
