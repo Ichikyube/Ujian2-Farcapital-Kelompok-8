@@ -1,5 +1,5 @@
 <x-app-layout>
-<form method="POST" action="{{ route('form.store') }}" enctype="multipart/form-data">
+<form method="POST" action="{{ route('form.store') }}" enctype="multipart/form-data" id="form">
     @csrf
     <!--x-input-error  :message="$message" /-->
 <div class="bg-indigo-50 min-h-screen md:px-20 pt-6">
@@ -18,7 +18,7 @@
         @endif
         <div class="py-2">
           <label for="topik" class="text-lx font-serif">Topik : </label>
-          <input name="topik" type="text" placeholder="title" id="topik" class="ml-2 outline-none py-1 px-2 text-md border-2 rounded-md" />
+          <input name="topik" type="text" placeholder="title" id="topik" class="ml-2 outline-none py-1 px-2 text-md border-2 rounded-md" value="{{ old('topik') }}"/>
         </div>
         <div class="py-2">
           <label for="jenis_laporan" class="text-lx font-serif">Jenis Laporan : </label>
@@ -30,19 +30,19 @@
         </div>
         <div class="py-2">
           <label for="alamat" class="text-lx font-serif">Alamat : </label>
-          <input name="alamat" type="text" placeholder="title" id="alamat" class="ml-2 outline-none py-1 px-2 text-md border-2 rounded-md" />
+          <input name="alamat" type="text" placeholder="title" id="alamat" class="ml-2 outline-none py-1 px-2 text-md border-2 rounded-md" value="{{ old('alamat') }}"/>
         </div>
         <div class="py-2">
           <label for="kecamatan" class="text-lx font-serif">Kecamatan : </label>
-          <input name="kecamatan" type="text" placeholder="title" id="kecamatan" class="ml-2 outline-none py-1 px-2 text-md border-2 rounded-md" />
+          <input name="kecamatan" type="text" placeholder="title" id="kecamatan" class="ml-2 outline-none py-1 px-2 text-md border-2 rounded-md" value="{{ old('kecamatan') }}"/>
         </div>
         <div class="py-2">
           <label for="kabupaten" class="text-lx font-serif">Kabupaten : </label>
-          <input name="kabupaten" type="text" placeholder="title" id="kabupaten" class="ml-2 outline-none py-1 px-2 text-md border-2 rounded-md" />
+          <input name="kabupaten" type="text" placeholder="title" id="kabupaten" class="ml-2 outline-none py-1 px-2 text-md border-2 rounded-md" value="{{ old('kabupaten') }}"/>
         </div>
         <div class="pt-3 pb-6">
           <label for="cerita" class="block mb-2 text-lg font-serif">Cerita : </label>
-          <textarea name=cerita id="cerita" cols="30" rows="10" placeholder="Tulis disini aspirasi anda.." class="w-full font-serif  p-4 text-gray-600 bg-indigo-50 outline-none rounded-md"></textarea>
+          <textarea name=cerita id="cerita" cols="30" rows="10" placeholder="Tulis disini aspirasi anda.." class="w-full font-serif  p-4 text-gray-600 bg-indigo-50 outline-none rounded-md">{{ old('cerita') }}</textarea>
         </div>
         <label for="foto">
             <span class="label">Choose file</span>
@@ -81,8 +81,4 @@ $(function(){
   </script>
 @endpush
 </x-app-layout>
-
-
-
-
 

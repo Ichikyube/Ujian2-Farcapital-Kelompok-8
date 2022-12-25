@@ -6,17 +6,17 @@
                 @csrf
                 <div class="flex">
                     <label for="nama" class="text-slate-900 font-bold mr-[50px]"> Nama</label>
-                    <input type="text" name="nama" id="nama" class="border-2 w-full" placeholder="write your title.."/>
+                    <input type="text" name="nama" id="nama" class="border-2 w-full" placeholder="write your title.." value="{{ old('nama') }}"/>
                 </div>
                 <br>
                 <div class="flex">
                     <label for="email" class="text-slate-900 font-bold mr-[35px]"> Email </label>
-                    <input type="text" name="email" id="email" class="border-2 w-full" placeholder="write your title.."/>
+                    <input type="text" name="email" id="email" class="border-2 w-full" placeholder="write your title.." value="{{ old('email') }}"/>
                 </div>
                 <br>
                 <div class="flex">
                     <label for="password" class="text-slate-900 font-bold mr-[40px]"> Password </label>
-                    <input type="password" name="password" id="password" class="border-2 w-full"/>
+                    <input type="password" name="password" id="password" class="border-2 w-full" value="{{ old('password') }}"/>
                 </div>
                 <br>
                 <div class="flex gap-4 mt-[40px] justify-center">
