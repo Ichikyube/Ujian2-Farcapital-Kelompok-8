@@ -8,8 +8,11 @@
     @endpush
 <div
     class="relative flex z-30 items-top justify-center min-h-screen dark:bg-gray-900 sm:items-center py-4 sm:pt-0">
-
-
+    @if (session()->has('success'))
+        <div class="absolute -top-4 rounded-md shadow-lg shadow-lime-500/40 bg-green-500 w-full p-2 mt-2">
+        {{ session('success') }}
+        </div>
+    @endif
     <div class="max-w-6xl mx-auto sm:px-6 lg:px-8">
         <div class="mt-6 bg-white dark:bg-gray-800 overflow-hidden shadow sm:rounded-lg">
             <div class="container p-6 border-t border-gray-200 dark:border-gray-700 md:border-t-0 md:border-l">

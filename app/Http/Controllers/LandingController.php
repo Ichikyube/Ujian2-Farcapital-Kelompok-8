@@ -14,10 +14,10 @@ class LandingController extends Controller
 
     public function store(Request $request){
         $payload = $request->all();
-        
+
         $foto = [];
         if($request->file('foto')){
-            $foto = [ 
+            $foto = [
                 "foto" => $request->file('foto')
             ];
         }
@@ -33,6 +33,6 @@ class LandingController extends Controller
         }
 
         $book = $responseBook['data'];
-        return redirect()->route('form.aspirasi')->with('success', 'Pengiriman form berhasil!');
+        return redirect()->route('welcome')->with('success', 'Pengiriman form berhasil!');
     }
 }
