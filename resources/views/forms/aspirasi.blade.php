@@ -16,27 +16,27 @@
             {{ session('success') }}
           </div>
         @endif
-        <div class="py-2">
+        <div class="py-2 flex items-center justify-between w-full sm:w-1/2 md:w-1/2 lg:w-1/2">
           <label for="topik" class="text-lx font-serif">Topik : </label>
           <input name="topik" type="text" placeholder="title" id="topik" class="ml-2 outline-none py-1 px-2 text-md border-2 rounded-md" value="{{ old('topik') }}"/>
         </div>
-        <div class="py-2">
+        <div class="py-2 flex items-center justify-between w-full sm:w-1/2 md:w-1/2 lg:w-1/2">
           <label for="jenis_laporan" class="text-lx font-serif">Jenis Laporan : </label>
-          <select name="jenis_laporan" id="jenis_laporan" class="ml-2 outline-none py-1 px-2 text-md border-2 rounded-md" />
+          <select name="jenis_laporan" id="jenis_laporan" class="ml-2 pr-7 outline-none py-1 px-2 text-md border-2 rounded-md" />
             <option selected disabled> -- select an option -- </option>
             <option value="1">Aspirasi</option>
             <option value="2">Pengaduan</option>
           </select>
         </div>
-        <div class="py-2">
+        <div class="py-2 flex items-center justify-between w-full sm:w-1/2 md:w-1/2 lg:w-1/2">
           <label for="alamat" class="text-lx font-serif">Alamat : </label>
           <input name="alamat" type="text" placeholder="title" id="alamat" class="ml-2 outline-none py-1 px-2 text-md border-2 rounded-md" value="{{ old('alamat') }}"/>
         </div>
-        <div class="py-2">
+        <div class="py-2 flex items-center justify-between w-full sm:w-1/2 md:w-1/2 lg:w-1/2">
           <label for="kecamatan" class="text-lx font-serif">Kecamatan : </label>
           <input name="kecamatan" type="text" placeholder="title" id="kecamatan" class="ml-2 outline-none py-1 px-2 text-md border-2 rounded-md" value="{{ old('kecamatan') }}"/>
         </div>
-        <div class="py-2">
+        <div class="py-2 flex items-center justify-between w-full sm:w-1/2 md:w-1/2 lg:w-1/2">
           <label for="kabupaten" class="text-lx font-serif">Kabupaten : </label>
           <input name="kabupaten" type="text" placeholder="title" id="kabupaten" class="ml-2 outline-none py-1 px-2 text-md border-2 rounded-md" value="{{ old('kabupaten') }}"/>
         </div>
