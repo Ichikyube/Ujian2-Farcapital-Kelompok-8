@@ -1,10 +1,5 @@
-<<<<<<< HEAD
 <x-app-layout>
     <section class="w-full mx-auto md:w-2/3 flex flex-col items-center px-3">
-=======
-@extends('dashboard');
->>>>>>> test
-
         <article class="flex flex-col shadow my-4">
             <!-- Article Image -->
             <a href="#" class="hover:opacity-75">
@@ -14,7 +9,7 @@
                 <div class="flex justify-between">
                     <a href="#" class="text-3xl font-bold hover:text-gray-700 pb-4">{{ $aspirasi['topik'] }}</a>
                 </div>
-                <a href="#" class="text-yellow-600 text-sm font-bold uppercase pb-4">Jenis Laporan : 
+                <a href="#" class="text-yellow-600 text-sm font-bold uppercase pb-4">Jenis Laporan :
                     @if ($aspirasi['jenis_laporan'] == 1)
                         Aspirasi
                     @else
@@ -38,10 +33,4 @@
             </div>
         </article>
     </section>
-<<<<<<< HEAD
 </x-app-layout>
-
-
-=======
-@endsection
->>>>>>> test
