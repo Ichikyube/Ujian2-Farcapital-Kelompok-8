@@ -6,7 +6,8 @@
     <title>{{ $title ?? config('app.name') }}</title>
     <link href="https://fonts.bunny.net/css2?family=Nunito:wght@400;600;700&display=swap" rel="stylesheet">
     <link rel="shortcut icon" href="{{asset('img/logo.jpg')}}" type="image/x-icon">
-    @vite('resources/css/app.css')
+    <script src="{{asset('build/assets/flowbite.js')}}"></script>
+    @vite('resources/css/app.css','resources/js/app.js')
     @stack('styles')
 </head>
 
