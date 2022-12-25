@@ -10,8 +10,8 @@
             </svg>
         </button>
     </div>
-    <div class="hidden relative z-50 mt-5 transform -translate-y-1/2 -translate-x-1/2 lg:flex lg:mx-auto lg:items-center lg:w-auto lg:space-x-6" id="navbar-default">
-        <div class="flex flex-col absolute backdrop-blur-sm md:backdrop-filter-none lg:backdrop-filter-none  md:right-12 md:-top-12 -right-5 sm:top-4 p-4 mt-4 z-50 border border-gray-100 rounded-lg lg:bg-transparent md:bg-transparent sm:bg-white/30 md:flex-row md:space-x-8 md:mt-0 md:text-sm md:font-medium md:border-0 md:bg-white dark:bg-gray-800 md:dark:bg-gray-900 dark:border-gray-700">
+    <div class="hidden relative z-50 mt-5 lg:flex lg:mx-auto lg:items-center lg:w-auto lg:space-x-6" id="navbar-default">
+        <div class="flex flex-col flex-wrap absolute md:static lg:static backdrop-blur-sm md:backdrop-filter-none lg:backdrop-filter-none  sm:right-12 md:right-0 lg:right-0 md:-top-14 lg:-top-14 -right-5 sm:top-4 p-4 mt-4 z-50 border border-gray-100 rounded-lg lg:bg-transparent md:bg-transparent sm:bg-transparent bg-white/30 md:flex-row md:space-x-8 md:mt-0 md:text-sm md:font-medium md:border-0 md:bg-white dark:bg-gray-800 md:dark:bg-gray-900 dark:border-gray-700">
             <div class="flex w-max gap-14">
                 @if(!session()->has('logged'))
                     @if(Route::is('welcome') )
